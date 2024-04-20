@@ -1,5 +1,6 @@
 public class Sistema {
-    
+
+    //Exibe menu
     public static void exibirMenu(){
 
         System.out.println("=====Menu=====");
@@ -16,9 +17,7 @@ public class Sistema {
     }
 
     public static void verificaOpcao(int opcao){
-        
-        
-            
+     
         switch (opcao) {
             case 1:
             //Usuário digita todas as informações do gerente 
@@ -36,13 +35,13 @@ public class Sistema {
                 int matricula = Console.lerInt();
                 System.out.print("Digite o nome do projeto em que o gerente esta participando: ");
                 String nomeProjeto = Console.leString();
-            //Coloca todas a informações digitadas pelo o usuario
 
+            //Coloca todas a informações digitadas pelo o usuario
                 Gerente gerente = new Gerente(nome, idade, setor, cargaHoraria, formacao,matricula,nomeProjeto);
                 GerenciarFuncionarios.adicionarFuncionario(gerente);
                 break;
             case 2:
-
+                 //Usuário digita todas as informações do tecnico 
                 System.out.print("Digite o nome do tecnico: ");
                 nome = Console.leString();
                 System.out.print("Digite a idade do tecnico: ");
@@ -63,7 +62,7 @@ public class Sistema {
                 break;
             case 3:
 
-                
+                 //Usuário digita todas as informações do estagiario
                 System.out.print("Digite o nome do estagiario: ");
                 nome = Console.leString();
                 System.out.print("Digite a idade do estagiario: ");
@@ -84,13 +83,51 @@ public class Sistema {
                 break;
 
             case 4:
+                //Mostra as informações do funcionario selecionado
                 GerenciarFuncionarios.mostrarFuncionario();
                 break;
             case 5:
+            //Edita as informações do funcionario selecionado
                 System.out.print("\nDigite a matricula do funcionario: ");
                 matricula = Console.lerInt();
                 GerenciarFuncionarios.edicaoFuncionario(matricula);
                 break;
+            case 6:
+            //Exluir os funcionarios da lista
+            //Duas opcoes ou exclui somente 1 ou exlcui todos
+                System.out.println("=====Menu=====");
+                System.out.println("1-Excluir um funcionario");
+                System.out.println("2-Excluir todos os funcionarios");
+                System.out.print("Selecione uma das opcoes: ");
+                opcao = Console.lerInt();
+
+                switch (opcao) {
+                    case 1:
+                    
+                        System.out.print("Digite a matricula:");
+                        matricula = Console.lerInt();
+                        if(GerenciarFuncionarios.excluirFuncionario(matricula))
+                        System.out.println("\nFuncionario removido com sucesso");
+                        else{
+                            System.out.println("\nFuncionário " + matricula + " não localizado no cadastro");
+                        }
+                        break;
+                    case 2:
+    
+                    GerenciarFuncionarios.excluirTodosFuncionarios();
+                
+                    break;
+                    default:
+
+                    System.out.println("Opcao invalida, tente novamente!");
+
+                        break;
+                }
+                break;
+                //Finaliza o programa
+                case 0:
+                System.out.println("\nFinalizando sistema....");
+                System.exit(0);
             default:
                 System.out.println("Opcao invalida, tente novamente!");
                 break;
@@ -99,7 +136,7 @@ public class Sistema {
         }
 
     public static void executarPrograma(){
-
+//Inicio de tudo
         int opcao;
         do {
 

@@ -1,13 +1,13 @@
 public class Funcionario {
     
-
-    String nome;
-    int idade;
-    String setor;
-    int cargaHoraria;
-    String curso;
-    int matricula;
-    
+//Atributos
+   protected String nome;
+   protected int idade;
+   protected String setor;
+   protected int cargaHoraria;
+   protected String curso;
+   protected int matricula;
+//Construtor
     public Funcionario(String nome, int idade, String setor, int cargaHoraria, String curso,int matricula){
         this.nome = nome;
         this.idade = idade;
@@ -17,6 +17,7 @@ public class Funcionario {
         this.matricula = matricula;
     }
 
+    //Getters e setters
     public String getNome() {
         return nome;
     }
@@ -54,14 +55,15 @@ public class Funcionario {
         this.matricula = matricula;
     }
 
+    //Mostrar as informaçoes do funcionario
     @Override
     public String toString() {
         return "Nome: " + nome +
                "\nIdade: " + idade +
                "\nSetor:" + setor +
-               "Carga Horaria: " + cargaHoraria +
-               "Formacao: " + curso +
-               "Matricula: " + matricula;    
+               "\nCarga Horaria: " + cargaHoraria +
+               "\nFormacao: " + curso +
+               "\nMatricula: " + matricula;    
     }
 
 

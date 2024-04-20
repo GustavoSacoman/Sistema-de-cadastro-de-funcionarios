@@ -1,7 +1,9 @@
 public class Gerente extends Funcionario {
     
-    
-    String projeto;
+//Atributos
+
+   private String projeto;
+//Construtor
 
     public Gerente(String nome, int idade, String setor, int cargaHoraria, String curso, int matricula, String projeto){
         super(nome, idade, setor, cargaHoraria, curso,matricula);
@@ -9,17 +11,19 @@ public class Gerente extends Funcionario {
         this.projeto = projeto;
     }
     
-    
+//Getters e setters
+
     public String getProjeto() {
         return projeto;
     }
     public void setProjeto(String projeto) {
         this.projeto = projeto;
     }
-    
+ //Mostrar as informaçoes do funcionario
+
    @Override
    public String toString() {
-       return super.toString() + "\nProjeto: " + projeto;
+       return super.toString() + "\nProjeto: \n" + projeto;
    }
     
     

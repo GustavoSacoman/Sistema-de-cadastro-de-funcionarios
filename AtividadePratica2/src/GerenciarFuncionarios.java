@@ -1,9 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GerenciarFuncionarios {
 
-    
+    //Cria a lista de funcionarios onde vai armazenar tudo
     public static List<Funcionario> listaFuncionarios = new ArrayList<>();
    
 //Adiciona funcionario na listaFuncionario
@@ -28,10 +29,11 @@ public class GerenciarFuncionarios {
     }
 
 //Motra funcionario desejado
+
     public static void mostrarFuncionario(){
 //Verifica se há funcionarios cadastrados
             if(listaFuncionarios.isEmpty()){
-                System.out.println("Nao ha funcionarios cadastrados!!");
+                System.out.println("\nNao ha funcionarios cadastrados!!\n");
                 return;
             }
 
@@ -39,6 +41,7 @@ public class GerenciarFuncionarios {
 
                 System.out.println("\nDigite a matricula do funcionario:");
                 int matricula = Console.lerInt();
+                
 //Procura funcionario
                 for(Funcionario temp : listaFuncionarios){
                     if(temp.matricula == matricula && temp instanceof Gerente){
@@ -46,21 +49,24 @@ public class GerenciarFuncionarios {
 
 //Altera o tipo para mostrar todas as informaçoes
                         Gerente gerente = (Gerente) temp;
-                        gerente.toString();
+                        System.out.println("Mostrando Gerente...\n");
+                        System.out.println(gerente);
                     }
                     else if(temp.matricula == matricula && temp instanceof Tecnico){
                         System.out.println("Funcionario encontrado!!");
 
 //Altera o tipo para mostrar todas as informaçoes
+                        System.out.println("Mostrando Tecnico...\n");
                         Tecnico tecnico = (Tecnico) temp;
-                        tecnico.toString();
+                        System.out.println(tecnico);
                     }
                     else if(temp.matricula == matricula && temp instanceof Estagiario){
                         System.out.println("Funcionario encontrado!!");
 
 //Altera o tipo para mostrar todas as informaçoes
+                        System.out.println("Mostrando Estagiario...\n");
                         Estagiario estagiario = (Estagiario) temp;
-                        estagiario.toString();
+                        System.out.println(estagiario);
                     }
                     else{System.out.println("Funcionario nao encontrado!!");}
                 }
@@ -126,8 +132,8 @@ public class GerenciarFuncionarios {
                 funcionario.setMatricula(matricula);
                     break;
                 case 7:
-//Verifica o tipo de funcionario para que possa alterar o valor correto
 
+//Verifica o tipo de funcionario para que possa alterar o valor correto
                 if(funcionario instanceof Gerente){
                     System.out.print("Digite o projeto do gerente: ");
                     String projeto = Console.leString();
@@ -160,5 +166,28 @@ public class GerenciarFuncionarios {
             }
         }while(opcao != 0);
     }
+//Usa um boolean para avaliar se foi excluido ou nao o funcionario
+    public static boolean excluirFuncionario(int matricula){
+        for(Funcionario temp : listaFuncionarios){
+            if (temp.getMatricula() == matricula) {
+                listaFuncionarios.remove(temp);
+                return true;
+            }
+        }
+        return false;
+    }
+//Limpa toda a lista de funcionarios
+    public static void excluirTodosFuncionarios(){
+        if(listaFuncionarios.isEmpty()){
+            System.out.println("Nao ha funcionarios na lista");
+            return;
+        }
+        else{
+        listaFuncionarios.clear();
+
+        System.out.println("Todos os funcionarios foram excluidos com sucesso!!!");
+        }    
+    }
 }
+
 

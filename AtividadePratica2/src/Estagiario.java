@@ -1,13 +1,16 @@
 public class Estagiario extends Funcionario {
 
-    
-    int tempoEstagio;
+//Atributos
 
+    private int tempoEstagio;
+
+//Construtor
 
     public Estagiario(String nome, int idade, String setor, int cargaHoraria, String curso,int matricula, int tempoEstagio){
         super(nome, idade, setor, cargaHoraria, curso, matricula);
         this.tempoEstagio = tempoEstagio;
     }
+//Getters e setters
 
     public String getCurso() {
         return curso;
@@ -22,8 +25,9 @@ public class Estagiario extends Funcionario {
         this.tempoEstagio = tempoEstagio;
     }
 
+//Mostra as informações do funcionario
     @Override
     public String toString() {
-        return super.toString() + "Tempo de estagio: " + tempoEstagio;
+        return super.toString() + "\nTempo de estagio: \n" + tempoEstagio;
     }
 }
