@@ -22,5 +22,8 @@ public class Tecnico extends Funcionario {
         this.matricula = matricula;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "\nTarefas: " + tarefas;
+    }
 }

@@ -54,5 +54,15 @@ public class Funcionario {
         this.matricula = matricula;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: " + nome +
+               "\nIdade: " + idade +
+               "\nSetor:" + setor +
+               "Carga Horaria: " + cargaHoraria +
+               "Formacao: " + curso +
+               "Matricula: " + matricula;    
+    }
+
 
 }

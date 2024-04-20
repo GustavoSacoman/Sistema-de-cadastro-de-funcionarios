@@ -6,8 +6,9 @@ public class Sistema {
         System.out.println("1- Cadastrar gerente");
         System.out.println("2- Cadastrar tecnico");
         System.out.println("3- Cadastrar estagiario");
-        System.out.println("4- Editar cadastros");
-        System.out.println("5- Excluir cadastros");
+        System.out.println("4- Mostrar funcionarios");
+        System.out.println("5- Editar cadastros");
+        System.out.println("6- Excluir cadastros");
         System.out.println("0- Sair ");
 
         System.out.print("Digite uma das opcoes acima:");
@@ -60,7 +61,7 @@ public class Sistema {
                 Tecnico tecnico = new Tecnico(nome, idade, setor, cargaHoraria, formacao, matricula, tarefas);
                 GerenciarFuncionarios.adicionarFuncionario(tecnico);
                 break;
-                case 3:
+            case 3:
 
                 
                 System.out.print("Digite o nome do estagiario: ");
@@ -81,44 +82,21 @@ public class Sistema {
                 Estagiario estagiario = new Estagiario(nome, idade, setor, cargaHoraria, formacao, matricula, tempoEstagio);
                 GerenciarFuncionarios.adicionarFuncionario(estagiario);
                 break;
-                case 4:
-                
-                System.out.println("=====Edicao de funcionarios=====");
-                System.out.println("1- Editar gerente");
-                System.out.println("1- Editar tecnico");
-                System.out.println("1- Editar estagiario");
 
-                int opcoesEdit = Console.lerInt();
-
-                switch (opcoesEdit) {
-                    
-                    case 1:
-                    System.out.print("informe a matricula do gerente: ");
-                    matricula = Console.lerInt();
-                    GerenciarFuncionarios.edicaoGerente(matricula);
-                    break;
-                    case 2:
-                    System.out.print("informe a matricula do tecnico: ");
-                    matricula = Console.lerInt();
-                    GerenciarFuncionarios.editarTecnico(matricula);
-                    break;
-                    case 3:
-                    System.out.print("informe a matricula do estagiario: ");
-                    matricula = Console.lerInt();
-                    GerenciarFuncionarios.editarEstagiario(matricula);
-                    break;
-                    default:
-                    System.out.println("opcao incorreta, informe um valor valido!");
-                        break;
-                }
-
-            default:
+            case 4:
+                GerenciarFuncionarios.mostrarFuncionario();
                 break;
+            case 5:
+                System.out.print("\nDigite a matricula do funcionario: ");
+                matricula = Console.lerInt();
+                GerenciarFuncionarios.edicaoFuncionario(matricula);
+                break;
+            default:
+                System.out.println("Opcao invalida, tente novamente!");
+                break;
+            }
+
         }
-  
-
-    }
-
 
     public static void executarPrograma(){
 

@@ -17,7 +17,10 @@ public class Gerente extends Funcionario {
         this.projeto = projeto;
     }
     
-   
+   @Override
+   public String toString() {
+       return super.toString() + "\nProjeto: " + projeto;
+   }
     
     
 }

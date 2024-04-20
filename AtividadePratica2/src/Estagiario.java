@@ -22,5 +22,8 @@ public class Estagiario extends Funcionario {
         this.tempoEstagio = tempoEstagio;
     }
 
-    
+    @Override
+    public String toString() {
+        return super.toString() + "Tempo de estagio: " + tempoEstagio;
+    }
 }
